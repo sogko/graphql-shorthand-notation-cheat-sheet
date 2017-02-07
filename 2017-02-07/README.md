@@ -5,7 +5,7 @@ _Last updated: 2017-01-28_
 
 _Prepared by: Hafiz Ismail / @sogko_
 
-## What is GraphQL Schema Language?
+## What is GraphQL [Schema Language](http://graphql.org/learn/schema/#type-language)?
 
 It is a shorthand notation to succinctly express the basic shape of your GraphQL schema and its type system.
 
@@ -85,13 +85,13 @@ schema {
 | keyword     | definition                                                                                              |
 |-------------|---------------------------------------------------------------------------------------------------------|
 | `scalar`    | Represent the leaves of the query (values of fields)                                                    |
-| `type`      | Simple object with fields                                                                               |
+| `type`      | Simple [object](http://graphql.org/learn/schema/#object-types-and-fields) with fields                                                                               |
 | `interface` | Abstract type that includes a certain set of fields that a type must include to implement the interface |
 | `union`     | Similar to interfaces, but without specifing common fields between types                                |
 | `enum`      | A special kind of scalar that is restricted to a particular set of allowed values                       |
 | `input`     | Represent non-scalars for arguments                                                                     |
 
-## Type Modifiers
+## [Type Modifiers](http://graphql.org/learn/schema/#lists-and-non-null)
 
 | keyword      | definition                                |
 |--------------|-------------------------------------------|
@@ -101,12 +101,12 @@ schema {
 | `[String]!`  | Non-nullable list of nullable strings     |
 | `[String!]!` | Non-nullable list of non-nullable strings |
 
-## Input Arguments
+## [Input Arguments](http://graphql.org/learn/schema/#arguments)
 
 ### Basic input
 
 ```graphql
-type Root {
+type Query {
   users(limit: Int): [User]!
 }
 ```
@@ -114,7 +114,7 @@ type Root {
 ### Input with default value
 
 ```graphql
-type Root {
+type Query {
   users(limit: Int = 10): [User]
 }
 ```
@@ -122,7 +122,7 @@ type Root {
 ### Input with multiple args
 
 ```graphql
-type Root {
+type Query {
   users(limit: Int, sort: String): [User]
 }
 ```
@@ -130,24 +130,24 @@ type Root {
 ### Input with multiple args and default values
 
 ```graphql
-type Root {
+type Query {
   users(limit: Int = 10, sort: String): [User]
 }
 
 ## or
 
-type Root {
+type Query {
   users(limit: Int, sort: String = "asc" ): [User]
 }
 
 ## or
 
-type Root {
+type Query {
   users(limit: Int = 10, sort: String = "asc" ): [User]
 }
 ```
 
-## Input Types
+## [Input Types](http://graphql.org/learn/schema/#input-types)
 
 ```graphql
 input ListUsersInput {
@@ -171,7 +171,7 @@ type User {
 }
 ```
 
-## Interfaces
+## [Interfaces](http://graphql.org/learn/schema/#interfaces)
 
 Object implementing one or more interfaces
 ```graphql
@@ -195,7 +195,7 @@ type Bar implements Foo, Goo {
 }
 ```
 
-## Unions
+## [Unions](http://graphql.org/learn/schema/#union-types)
 
 Union of one or more objects
 
@@ -217,7 +217,7 @@ type Root {
 }
 ```
 
-## Enums
+## [Enums](http://graphql.org/learn/schema/#enumeration-types)
 
 ```graphql
 enum USER_STATE {
