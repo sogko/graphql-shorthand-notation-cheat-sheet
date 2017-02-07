@@ -160,7 +160,7 @@ type Mutation {
 }
 ```
 
-## Custom Scalar
+## [Custom Scalar](http://graphql.org/learn/schema/#scalar-types)
 
 ```graphql
 scalar Url
